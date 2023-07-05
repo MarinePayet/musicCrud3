@@ -18,7 +18,7 @@ class Artist
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
-    #[ORM\OneToMany(mappedBy: 'artist', targetEntity: album::class)]
+    #[ORM\OneToMany(mappedBy: 'artist', targetEntity: Album::class)]
     private Collection $album;
 
     public function __construct()
@@ -72,4 +72,10 @@ class Artist
 
         return $this;
     }
+
+    public function __toString()
+    {
+        return $this->getName();   
+    }
+        
 }

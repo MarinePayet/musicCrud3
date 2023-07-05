@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ArtistController!{% endblock %}
+
+{% block body %}
+
+    {% for album in artist.album %}
+        <h2>Hello {{ album.title }}! ✅</h2>
+    {% endfor %}
+
+    <a href="{{ path('artists_index') }}"> Accueil </a>
+
+{% endblock %}
